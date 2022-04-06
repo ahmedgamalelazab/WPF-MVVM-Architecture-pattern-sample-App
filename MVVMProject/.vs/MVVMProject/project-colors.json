@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "42f5569e-1068-450b-a334-a3c9098ab0af": {
+      "ProjectGuid": "42f5569e-1068-450b-a334-a3c9098ab0af",
+      "DisplayName": "MVVMProject",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
