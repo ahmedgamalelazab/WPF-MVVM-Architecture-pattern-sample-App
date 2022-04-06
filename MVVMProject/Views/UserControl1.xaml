@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="MVVMProject.Views.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MVVMProject.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!--Lables-->
+        <Label Content="ID" Grid.Row="0" Grid.Column="0" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Label Content="Name" Grid.Row="1" Grid.Column="0" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Label Content="Address" Grid.Row="2" Grid.Column="0" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Label Content="Phone" Grid.Row="3" Grid.Column="0" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Label Content="Data" Grid.Row="4" Grid.Column="0" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Label Content="Operations" Grid.Row="5" Grid.Column="0" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Label Content="Result" Grid.Row="6" Grid.Column="0" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <!--END OF Lables-->
+        
+        <!--DATA GRID-->
+        <DataGrid  
+            SelectedItem="{Binding User}"   
+            ItemsSource="{Binding Users}"
+            Grid.Row="4" Grid.Column="1">
+
+        </DataGrid>
+        <!--END OF DATA GRID-->
+        
+        <!--OPERATIONS-->
+
+        <Grid Margin="0,5,0,5" HorizontalAlignment="Center"  Grid.Row="5" Grid.Column="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Command="{Binding AddCommand}" Width="100" Margin="10,0,10,0" Content="Add" FontSize="16"/>
+
+            <Button Command="{Binding DeleteCommand}" Width="100" Margin="10,0,10,0" Grid.Column="1" Content="Delete" FontSize="16"/>
+
+            <Button Command="{Binding UpdateCommand}" Width="100" Margin="10,0,10,0" Grid.Column="2" Content="Update" FontSize="16"/>
+
+
+        </Grid>
+        
+        <!--END OF OPERATIONS-->
+        
+        <!--TEXT BOXES-->
+
+        <TextBox Text="{Binding User.Id}" Background="White" Grid.Row="0" Grid.Column="1" FontSize="20"/>
+
+        <TextBox Text="{Binding User.Name}" Background="White" Grid.Row="1" Grid.Column="1" FontSize="20"/>
+
+        <TextBox Text="{Binding User.Address}" Background="White" Grid.Row="2" Grid.Column="1" FontSize="20"/>
+
+        <TextBox Text="{Binding User.Phone}" Background="White" Grid.Row="3" Grid.Column="1" FontSize="20"/>
+        
+        <TextBox Background="White" Grid.Row="6" Grid.Column="1" FontSize="20"/>
+
+        <!--END OF TXT BOXES-->
+
+    </Grid>
+</UserControl>
